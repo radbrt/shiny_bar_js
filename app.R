@@ -42,7 +42,7 @@ server <- function(input, output, session) {
     dat <- reactive({
         req(input$yearslider)
         dat <- diamonds %>% 
-            mutate(price2 = ifelse(carat>input$yearslider, price, 0) ) %>% 
+            mutate(price2 = ifelse(carat>input$yearslider, price, NA) ) %>% 
             group_by(color) %>% 
             summarise(avgprice = mean(price2, na.rm=T))
     })
