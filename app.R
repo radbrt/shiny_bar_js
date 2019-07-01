@@ -64,7 +64,6 @@ server <- function(input, output, session) {
     shiny::onStop(shiny::stopApp)
 }
 
-
 # run app ----
 
 shinyApp(ui = ui, server = server)
